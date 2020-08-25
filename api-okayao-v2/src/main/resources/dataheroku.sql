@@ -10,6 +10,6 @@ INSERT INTO facture (id_facture, date_echeance, date_facturation, statut_facture
 
 INSERT INTO facture_ligne (id_facture_ligne, designation_prestation, prix_unitaireht, quantite, reduction, tva, facture_id_facture) VALUES ('1', 'Prestation 1', '20', '5', '0', '5.5', '1'), ('2', 'Prestation 2', '10', '4', '0', '5.5', '1');
 
-INSERT INTO `facture` (`id_facture`, `date_echeance`, `date_facturation`, `statut_facture`, `client_id`, `commentaire_id`, `emetteur_code_emetteur`) VALUES ('2', '2020-08-16 00:00:00.000000', '2020-08-19 00:00:00.000000', 'OUVERT', '1', '1', '2');
+INSERT INTO facture (id_facture, date_echeance, date_facturation, statut_facture, client_id, commentaire_id, emetteur_code_emetteur) VALUES ('2', '2020-08-16 00:00:00.000000', '2020-08-19 00:00:00.000000', 'OUVERT', '1', '1', '2');
 
 
