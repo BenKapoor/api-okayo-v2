@@ -16,12 +16,12 @@ spring.datasource.minIdle=2
 spring.datasource.initialSize=5
 spring.datasource.removeAbandoned=true
 ```
-- Modifier le format des données sql pas de ```
+- Modifier le format des données sql pas de `
 
 - ajout du fichier DatabasConfig dans configuration 
-
-@Configuration
 ```sh
+@Configuration
+
 public class DatabaseConfig {
 	
 	@Value("${spring.datasource.url}")
@@ -63,7 +63,7 @@ public class DatabaseConfig {
   $ mvn heroku:deploy -Dheroku.appName=myapp
   ```
   
-  *Coté Heroku : https://dashboard.heroku.com/apps/...*
+  **Coté Heroku : https://dashboard.heroku.com/apps/...**
   - faire la liaison entre le projet Git et celui généré afin de mettre en pace une intégration continue
   
   liens utils :
