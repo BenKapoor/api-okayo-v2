@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>api-okayao</name>
 	<description>Creation d'une api pour la création d'une facture</description>
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -81,6 +82,11 @@
 			<artifactId>h2</artifactId>
 			<scope>test</scope>
 
+		</dependency>
+		<!-- db heroku -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 		</dependency>
 	</dependencies>
 
