@@ -28,7 +28,7 @@ public class Swagger2Config {
     }
     private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder().title("OKAYO REST API")
-            .description("Rest Api recroupant les fonctionnalités liées à la facturation")
+            .description("Rest Api regroupant les fonctionnalités liées à la facturation")
             .license("Apache 2.0")
             .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
             .version("1.0.0")

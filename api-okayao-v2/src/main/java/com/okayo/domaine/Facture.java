@@ -1,6 +1,5 @@
 package com.okayo.domaine;
 
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -10,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * @author benja
@@ -24,10 +25,14 @@ public class Facture {
 	private Date dateFacturation;
 	private Date dateEcheance;
 	private String statutFacture;
+	
 	@ManyToOne
 	private Client client;
+	
 	@ManyToOne
 	private Emetteur emetteur;
+	
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Commentaire commentaire;
 	
