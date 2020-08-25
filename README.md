@@ -3,6 +3,7 @@
 Déploiement heroku :
 
 - Paramettrer la db avec les infos trouvable dans heroku/postgre
+```sh
 spring.datasource.url=
 spring.datasource.username=
 spring.datasource.password=
@@ -14,12 +15,13 @@ spring.datasource.maxIdle=5
 spring.datasource.minIdle=2
 spring.datasource.initialSize=5
 spring.datasource.removeAbandoned=true
-
+```
 - Modifier le format des données sql pas de ```
 
 - ajout du fichier DatabasConfig dans configuration 
 
 @Configuration
+```sh
 public class DatabaseConfig {
 	
 	@Value("${spring.datasource.url}")
@@ -32,29 +34,34 @@ public class DatabaseConfig {
 		return new HikariDataSource(config);
 	}
 }
+```
 
 - ajouter les dépendances dans le pom :
+```sh
   <dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
+	<groupId>org.postgresql</groupId>
+	<artifactId>postgresql</artifactId>
   </dependency>
   
   <plugin>
-				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId>
-				<version>3.0.3</version>
-				<configuration>
-				  <appName>api-okayo</appName>
-				  <processTypes>
-				     <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
-				  </processTypes>
-				</configuration>
+	<groupId>com.heroku.sdk</groupId>
+	<artifactId>heroku-maven-plugin</artifactId>
+	<version>3.0.3</version>
+	<configuration>
+	  <appName>api-okayo</appName>
+	  <processTypes>
+	     <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+	  </processTypes>
+	</configuration>
   </plugin>
-  
+  ```
   
   - exécuter les lignes de commandes : 
-  heroku create
-  mvn heroku:deploy -Dheroku.appName=myapp
+  
+  ```sh
+  $ heroku create
+  $ mvn heroku:deploy -Dheroku.appName=myapp
+  ```
   
   *Coté Heroku : https://dashboard.heroku.com/apps/...*
   - faire la liaison entre le projet Git et celui généré afin de mettre en pace une intégration continue
