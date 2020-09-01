@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.ResponseEntity;
 
 import com.okayo.controller.FactureController;
 import com.okayo.domaine.Client;
@@ -20,6 +21,7 @@ import com.okayo.domaine.Emetteur;
 import com.okayo.domaine.Facture;
 import com.okayo.service.FactureService;
 
+@ExtendWith(MockitoExtension.class)
 public class FactureControllerTest {
 	
 	@InjectMocks
@@ -33,7 +35,7 @@ public class FactureControllerTest {
 	Commentaire commentaire = new Commentaire();
 	
 	@Test
-	private void findAllFactureTest() {
+	public void findAllFactureTest() {
 		// Création de 3 factures
 		Facture facture1 = new Facture(new Date(), new Date(), "OUVERT", client, emetteur, commentaire);
 		Facture facture2 = new Facture(new Date(), new Date(), "FERME", client, emetteur, commentaire);
@@ -50,7 +52,7 @@ public class FactureControllerTest {
 		
 		// then
 		assertThat(factureResultat.size()).isEqualTo(2);
-		
+		assertThat(factureResultat.get(0).getCommentaire()).isEqualTo(facture1.getCommentaire());
 	}
 	
 }

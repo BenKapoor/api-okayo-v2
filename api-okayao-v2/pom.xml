@@ -49,6 +49,30 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- Junit 5 -->
+		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-api</artifactId>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-engine</artifactId>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.junit.platform</groupId>
+		    <artifactId>junit-platform-launcher</artifactId>
+		    <scope>test</scope>
+		</dependency>
+		
+		<!-- Mockito extention -->
+		<dependency>
+		    <groupId>org.mockito</groupId>
+		    <artifactId>mockito-junit-jupiter</artifactId>
+		    <scope>test</scope>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
@@ -108,6 +132,13 @@
 				  </processTypes>
 				</configuration>
 		    </plugin>
+		    
+		    <!-- sonar -->
+		    <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.4.0.905</version>
+            </plugin>
 		</plugins>
 	</build>
 
